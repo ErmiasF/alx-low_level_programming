@@ -1,34 +1,41 @@
 #include <stdio.h>
 
 /**
- * main - prints fibonnaci numbers
+ * main -  program that prints the first 98 Fibonacci numbers
  *
- * Description: prints from 1 to 98
- * Return: Always(0) Success
+ * Return: 0 exit success
  */
-
 int main(void)
 {
-	int num1, num2, i, n;
-	int next_num;
+	unsigned long int a, a1, a2, b, b1, b2, c, c1, c2, d, e;
 
-	n = 98;
+	a = 1;
+	b = 2;
+	c = a + b;
 
-	for (i = 1; i <= n; i++)
+	printf("%lu, ", a);
+	printf("%lu, ", b);
+	for (d = 3; d < 89; d++)
 	{
-		if (i == 98)
-		{
-			printf("%d, ", num2);
-		}
-		else
-		{
-			printf("%d, ", num2);
-			next_num = num1 + num2;
-			num1 = num2;
-			num2 = next_num;
-		}
+		printf("%lu, ", c);
+		a = b;
+		b = c;
+		c = a + b;
 	}
-	printf("\n");
-
+	b1 = b / 1000000000;
+	b2 = b % 1000000000;
+	c1 = c / 1000000000;
+	c2 = c % 1000000000;
+	for (e = 89; e < 98; e++)
+	{
+		printf("%lu%lu, ", c1, c2);
+		a1 = b1;
+		a2 = b2;
+		b1 = c1;
+		b2 = c2;
+		c1 = a1 + b1 + ((a2 + b2) / 1000000000);
+		c2 = (a2 + b2) % 1000000000;
+	}
+	printf("%lu%lu\n", c1, c2);
 	return (0);
 }
